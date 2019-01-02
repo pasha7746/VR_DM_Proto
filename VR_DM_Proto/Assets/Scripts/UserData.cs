@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR;
 
 public class UserData : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class UserData : MonoBehaviour
     public string nameText;
     private AudioSource source;
     private Text myText;
+    public string imagePath;
 
     void Awake()
     {
@@ -31,11 +34,24 @@ public class UserData : MonoBehaviour
 	{
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
-	       myImage.sprite= Sprite.Create(picture, Rect.MinMaxRect(0,0,picture.width,picture.height),Vector2.zero );
+	       LoadImage();
            PlaySound();
            LoadText();
 	    }
 	}
+
+    public void LoadImage()
+    {
+        byte[] tempFileData;
+        if (File.Exists(imagePath))
+        {
+            tempFileData = File.ReadAllBytes(imagePath);
+            picture= new Texture2D(2,2);
+            picture.LoadImage(tempFileData);
+        }
+
+        myImage.sprite = Sprite.Create(picture, Rect.MinMaxRect(0, 0, picture.width, picture.height), Vector2.zero);
+    }
 
     public void PlaySound()
     {
