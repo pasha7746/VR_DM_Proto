@@ -3,61 +3,91 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using Valve.VR;
 
 public class UserData : MonoBehaviour
 {
     public Texture2D picture;
     private Image myImage;
-    public AudioClip sound;
+    public AudioClip audioClip;
+    private VideoPlayer videoPlayer;
     public string nameText;
-    private AudioSource source;
+    private AudioSource audioPlayer;
     private Text myText;
     public string imagePath;
+    public string audioPath;
+    public string videoPath;
 
     void Awake()
     {
         myImage = GetComponentInChildren<Image>();
-        source = GetComponent<AudioSource>();
+        audioPlayer = GetComponent<AudioSource>();
         myText = GetComponentInChildren<Text>();
-
+        videoPlayer = GetComponentInChildren<VideoPlayer>();
     }
 
-    // Use this for initialization
-	void Start ()
-	{
-	    
-	}
+   
 	
 	// Update is called once per frame
 	void Update ()
 	{
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
-	       LoadImage();
-           PlaySound();
+	       LoadImage(imagePath);
+           PlaySound(audioPath);
            LoadText();
+           LoadVideo(videoPath);
 	    }
 	}
 
-    public void LoadImage()
+    public void LoadImage(string path) 
     {
-        byte[] tempFileData;
-        if (File.Exists(imagePath))
+        if (File.Exists(path))
         {
-            tempFileData = File.ReadAllBytes(imagePath);
+            byte[] tempFileData;
+            tempFileData = File.ReadAllBytes(path);
             picture= new Texture2D(2,2);
             picture.LoadImage(tempFileData);
+            myImage.sprite = Sprite.Create(picture, Rect.MinMaxRect(0, 0, picture.width, picture.height), Vector2.zero);
+
+        }
+        else
+        {
+            print("Missing image file.");
         }
 
-        myImage.sprite = Sprite.Create(picture, Rect.MinMaxRect(0, 0, picture.width, picture.height), Vector2.zero);
     }
 
-    public void PlaySound()
+    public void PlaySound(string path)
     {
-        source.clip = sound;
-        source.Play();
+       
+        if (File.Exists(path))
+        {
+            WWW tempAudioPath = new WWW("file:///"+ path);
+            audioClip = tempAudioPath.GetAudioClip(true,true);
+            audioPlayer.clip = audioClip;
+            audioPlayer.Play();
+        }
+        else
+        {
+            print("Missing audio data.");
+        }
         
+    }
+
+    public void LoadVideo(string path)
+    {
+        if (File.Exists(path))
+        {
+            videoPlayer.url = "file:///" + path;
+           
+            videoPlayer.Play();
+        }
+        else
+        {
+            print("Missing video data.");
+        }
     }
 
     public void LoadText()

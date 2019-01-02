@@ -1,6 +1,6 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
-// Purpose: Unparents this object and optionally destroys it after the sound
+// Purpose: Unparents this object and optionally destroys it after the audioClip
 //			has played
 //
 //=============================================================================

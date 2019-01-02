@@ -638,7 +638,7 @@ namespace Valve.VR.InteractionSystem
 					}
 				}
 
-				//Stop looping sound
+				//Stop looping audioClip
 				loopingAudioSource.Stop();
 				PlayAudioClip( pointerAudioSource, pointerStopSound );
 			}

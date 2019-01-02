@@ -47,7 +47,7 @@ namespace Valve.VR.InteractionSystem
 				//randomly apply a pitch between the pitch min max
 				thisAudioSource.pitch = Random.Range( pitchMin, pitchMax );
 
-				// play the sound
+				// play the audioClip
 				thisAudioSource.PlayOneShot( waveFiles[Random.Range( 0, waveFiles.Length )] );
 			}
 		}

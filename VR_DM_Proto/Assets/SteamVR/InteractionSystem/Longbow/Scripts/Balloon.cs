@@ -1,10 +1,10 @@
-//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 //
 // Purpose: BALLOONS!!
 //
 //=============================================================================
 
-﻿using UnityEngine;
+ using UnityEngine;
 using System.Collections;
 
 namespace Valve.VR.InteractionSystem
@@ -136,13 +136,13 @@ namespace Valve.VR.InteractionSystem
 			{
 				if ( collisionParentHand != null ) // If the collision was with a controller
 				{
-					if ( Time.time > ( releaseTime + soundDelay ) ) // Only play sound if it's not immediately after release
+					if ( Time.time > ( releaseTime + soundDelay ) ) // Only play audioClip if it's not immediately after release
 					{
 						collisionSound.Play();
 						lastSoundTime = Time.time;
 					}
 				}
-				else // Collision was not with a controller, play sound
+				else // Collision was not with a controller, play audioClip
 				{
 					collisionSound.Play();
 					lastSoundTime = Time.time;

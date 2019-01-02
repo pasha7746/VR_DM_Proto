@@ -17,11 +17,11 @@ namespace Valve.VR.InteractionSystem
 		public AudioClip[] waveFile;
 		[Tooltip( "Stops the currently playing clip in the audioSource. Otherwise clips will overlap/mix." )]
 		public bool stopOnPlay;
-		[Tooltip( "After the audio clip finishes playing, disable the game object the sound is on." )]
+		[Tooltip( "After the audio clip finishes playing, disable the game object the audioClip is on." )]
 		public bool disableOnEnd;
-		[Tooltip( "Loop the sound after the wave file variation has been chosen." )]
+		[Tooltip( "Loop the audioClip after the wave file variation has been chosen." )]
 		public bool looping;
-		[Tooltip( "If the sound is looping and updating it's position every frame, stop the sound at the end of the wav/clip length. " )]
+		[Tooltip( "If the audioClip is looping and updating it's position every frame, stop the audioClip at the end of the wav/clip length. " )]
 		public bool stopOnEnd;
 		[Tooltip( "Start a wave file playing on awake, but after a delay." )]
 		public bool playOnAwakeWithDelay;
@@ -46,12 +46,12 @@ namespace Valve.VR.InteractionSystem
 		public float pitchMax = 1.0f;
 
 		[Header( "Random Time" )]
-		[Tooltip( "Use Retrigger Time to repeat the sound within a time range" )]
+		[Tooltip( "Use Retrigger Time to repeat the audioClip within a time range" )]
 		public bool useRetriggerTime = false;
 		[Tooltip( "Inital time before the first repetion starts" )]
 		[Range( 0.0f, 360.0f )]
 		public float timeInitial = 0.0f;
-		[Tooltip( "Minimum time that will pass before the sound is retriggered" )]
+		[Tooltip( "Minimum time that will pass before the audioClip is retriggered" )]
 		[Range( 0.0f, 360.0f )]
 		public float timeMin = 0.0f;
 		[Tooltip( "Maximum pitch that will be used when randomly set." )]
@@ -59,14 +59,14 @@ namespace Valve.VR.InteractionSystem
 		public float timeMax = 0.0f;
 
 		[Header ( "Random Silence" )]
-		[Tooltip( "Use Retrigger Time to repeat the sound within a time range" )]
+		[Tooltip( "Use Retrigger Time to repeat the audioClip within a time range" )]
 		public bool useRandomSilence = false;
 		[Tooltip( "Percent chance that the wave file will not play" )]
 		[Range( 0.0f, 1.0f )]
 		public float percentToNotPlay = 0.0f;
 
 		[Header( "Delay Time" )]
-		[Tooltip( "Time to offset playback of sound" )]
+		[Tooltip( "Time to offset playback of audioClip" )]
 		public float delayOffsetTime = 0.0f;
 
 
@@ -88,7 +88,7 @@ namespace Valve.VR.InteractionSystem
 					Play();
 			}
 
-			// if playOnAwake is false, but the playOnAwakeWithDelay on the PlaySound is true, play the sound on away but with a delay
+			// if playOnAwake is false, but the playOnAwakeWithDelay on the PlaySound is true, play the audioClip on away but with a delay
 			else if ( !audioSource.playOnAwake && playOnAwakeWithDelay )
 			{
 				PlayWithDelay( delayOffsetTime );
@@ -97,7 +97,7 @@ namespace Valve.VR.InteractionSystem
 					InvokeRepeating( "Play", timeInitial, Random.Range( timeMin, timeMax ) );
 			}
 
-			// in the case where both playOnAwake and playOnAwakeWithDelay are both set to true, just to the same as above, play the sound but with a delay
+			// in the case where both playOnAwake and playOnAwakeWithDelay are both set to true, just to the same as above, play the audioClip but with a delay
 			else if ( audioSource.playOnAwake && playOnAwakeWithDelay )
 			{
 				PlayWithDelay( delayOffsetTime );
