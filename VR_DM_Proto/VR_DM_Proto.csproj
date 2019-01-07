@@ -343,10 +343,12 @@
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
+    <Compile Include="Assets\Scripts\BoardBuilder.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\SelectionVisual.cs" />
     <Compile Include="Assets\Scripts\TestFileBrowser.cs" />
     <Compile Include="Assets\Scripts\UserData.cs" />
+    <Compile Include="Assets\Scripts\VR_CustCtrl.cs" />
     <Compile Include="Assets\Scripts\VR_Selector.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
@@ -503,6 +505,15 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedCamera.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_buggy.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_buggy_In.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_default.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_default_In.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_default_Out.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer.cs" />
+    <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer_In.cs" />
+    <Compile Include="Assets\SteamVR_Input\SteamVR_Input_Actions.cs" />
+    <Compile Include="Assets\SteamVR_Input\SteamVR_Input_ActionSets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />

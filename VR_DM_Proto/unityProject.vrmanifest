@@ -1,0 +1,15 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vr_dm_proto.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "strings": {
+        "en_us": {
+          "name": "VR_DM_Proto [Testing]"
+        }
+      }
+    }
+  ]
+}

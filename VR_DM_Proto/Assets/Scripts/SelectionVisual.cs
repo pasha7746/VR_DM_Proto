@@ -32,7 +32,7 @@ public class SelectionVisual : MonoBehaviour
     public void PopUp()
     {
        popTween= movementChildGroup.transform.DOMove(pointB, popDuration).SetEase(movementEase);
-       //popTween.onComplete += PopDown;
+       
     }
 
     public void PopDown()
