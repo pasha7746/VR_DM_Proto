@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224304903210178354}
   - component: {fileID: 222662685784098692}
-  - component: {fileID: 114254125264638748}
+  - component: {fileID: 114329860135333022}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -437,7 +437,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114254125264638748
+--- !u!114 &114329860135333022
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1086145739252298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -456,14 +456,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!114 &114357202471930468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -561,11 +560,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picture: {fileID: 0}
+  rmimg: {fileID: 114329860135333022}
   audioClip: {fileID: 0}
+  videoPlayer: {fileID: 0}
   nameText: Mario
-  imagePath: G:\desktop\test\1_MAIN-Super-Mario.jpg
+  imagePath: E:\Pictures\boy
   audioPath: G:\desktop\test\Mario_Sound.wav
   videoPath: G:\desktop\test\Mario Jumping (With Sound).mp4
+  path: 
+  img: {fileID: 1086145739252298}
 --- !u!222 &222537476314481274
 CanvasRenderer:
   m_ObjectHideFlags: 1
